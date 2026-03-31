@@ -1,0 +1,43 @@
+﻿<Window x:Class="PicLoader.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PicLoader"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="750">
+    <Grid Margin="0,0,0,-6">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Первый набор: TextBox, Button, Image -->
+        <Image x:Name="ResultImage1" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="147" Margin="100,43,0,0" VerticalAlignment="Top" Width="150" Stretch="Uniform"/>
+        <Button x:Name="LoadButton1" Content="Start" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="100,262,0,0" VerticalAlignment="Top" Width="150" Click="LoadButton_Click" Tag="0"/>
+        <TextBox x:Name="UrlTextBox1" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="100,216,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" Height="24" KeyDown="UrlTextBox_KeyDown"/>
+
+        <!-- Второй набор -->
+        <Image x:Name="ResultImage2" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="147" Margin="300,43,0,0" VerticalAlignment="Top" Width="150" Stretch="Uniform"/>
+        <Button x:Name="LoadButton2" Content="Start" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="300,262,0,0" VerticalAlignment="Top" Width="150" Click="LoadButton_Click" Tag="1"/>
+        <TextBox x:Name="UrlTextBox2" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="300,216,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" Height="24" KeyDown="UrlTextBox_KeyDown"/>
+
+        <!-- Третий набор -->
+        <Image x:Name="ResultImage3" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="147" Margin="500,43,0,0" VerticalAlignment="Top" Width="150" Stretch="Uniform"/>
+        <Button x:Name="LoadButton3" Content="Start" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="500,262,0,0" VerticalAlignment="Top" Width="150" Click="LoadButton_Click" Tag="2"/>
+        <TextBox x:Name="UrlTextBox3" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="500,216,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" Height="24" KeyDown="UrlTextBox_KeyDown"/>
+
+        <!-- Общий прогрессбар для текущей загрузки -->
+        <ProgressBar x:Name="DownloadProgressBar" HorizontalAlignment="Left" Height="15" Margin="100,365,0,0" VerticalAlignment="Top" Width="550" Minimum="0" Maximum="100" Value="0" Grid.Column="1"/>
+
+        <!-- Кнопка: загрузить все три URL последовательно -->
+        <Button x:Name="LoadButton4" Content="Load all" HorizontalAlignment="Left" Margin="100,329,0,0" VerticalAlignment="Top" Width="550" Grid.Column="1" Click="LoadButton4_Click"/>
+
+        <!-- Именованные Stop-кнопки для каждой загрузки -->
+        <Button x:Name="StopButton1" Content="Stop" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="100,289,0,0" VerticalAlignment="Top" Width="150" Click="StopButton_Click" Tag="0"/>
+        <Button x:Name="StopButton2" Content="Stop" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="300,289,0,0" VerticalAlignment="Top" Width="150" Click="StopButton_Click" Tag="1"/>
+        <Button x:Name="StopButton3" Content="Stop" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="500,289,0,0" VerticalAlignment="Top" Width="150" Click="StopButton_Click" Tag="2"/>
+
+    </Grid>
+</Window>
+
